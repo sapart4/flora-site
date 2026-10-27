@@ -59,6 +59,17 @@ export default function Home() {
           <p className="text-gray-400 dark:text-gray-500 text-sm mb-2">
             © {new Date().getFullYear()} Flora. Зроблено з турботою 🌱
           </p>
+          
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-xs text-gray-400">Відвідувань:</span>
+            {/* Счетчик посещений */}
+            <img 
+              src="https://hits.sh/flor4.vercel.app.svg?style=flat-square&color=FFB3BA&labelColor=3A3A3A" 
+              alt="Visitors" 
+              className="h-5 opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
+
           <a 
             href="https://t.me/sapart4" 
             target="_blank" 
