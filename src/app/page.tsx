@@ -4,10 +4,10 @@ import PlantCard from "@/components/PlantCard";
 import HandmadeCard from "@/components/HandmadeCard";
 import Header from "@/components/Header";
 import RainbowBackground from "@/components/RainbowBackground";
+import SectionToggle from "@/components/SectionToggle";
 
 export default function Home() {
   return (
-    // Добавили dark:bg-[#121212] чтобы фон страницы тоже становился темным
     <main className="relative min-h-screen pb-20 overflow-hidden bg-[#FFFDF9] dark:bg-[#121212] transition-colors duration-300">
       
       <RainbowBackground />
@@ -27,39 +27,33 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="px-6 max-w-6xl mx-auto mb-24 text-center">
-          <span className="inline-block bg-pastel-sky text-ink text-sm font-bold px-4 py-1.5 rounded-full mb-6">
-            Живі сукуленти
-          </span>
-
-          <div className="flex flex-col md:flex-row items-center justify-between mb-8 mt-4">
-            <h2 className="font-serif text-2xl md:text-3xl font-semibold text-ink dark:text-white transition-colors">Наш каталог</h2>
-            <span className="text-sm text-gray-400 mt-2 md:mt-0">{plants.length} рослини</span>
-          </div>
-          
+        {/* Каталог растений (Суккуленти) */}
+        <SectionToggle 
+          title="Суккуленти" 
+          count={plants.length} 
+          badgeText="Живі рослини"
+          badgeColor="bg-pastel-sky"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {plants.map((plant) => (
               <PlantCard key={plant.id} plant={plant} />
             ))}
           </div>
-        </section>
+        </SectionToggle>
 
-        <section className="px-6 max-w-6xl mx-auto text-center">
-          <span className="inline-block bg-pastel-lavender text-ink text-sm font-bold px-4 py-1.5 rounded-full mb-6">
-            Рукоділля
-          </span>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between mb-8 mt-4">
-            <h2 className="font-serif text-2xl md:text-3xl font-semibold text-ink dark:text-white transition-colors">Ручна робота</h2>
-            <span className="text-sm text-gray-400 mt-2 md:mt-0">{handmadeItems.length} вироби</span>
-          </div>
-          
+        {/* Ручная работа */}
+        <SectionToggle 
+          title="Ручна робота" 
+          count={handmadeItems.length} 
+          badgeText="Рукоділля"
+          badgeColor="bg-pastel-lavender"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {handmadeItems.map((item: any) => (
               <HandmadeCard key={item.id} item={item} />
             ))}
           </div>
-        </section>
+        </SectionToggle>
 
         <footer className="mt-24 py-10 text-center border-t border-gray-100 dark:border-gray-800 relative z-10 transition-colors">
           <p className="text-gray-400 dark:text-gray-500 text-sm mb-2">
