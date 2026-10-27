@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Flora | Маленькі рослини з великою любов'ю",
-  description: "Красивий каталог мініатюрних сукулентів. Обирайте рослину та замовляйте на OLX або в Telegram.",
+  title: "Flora | Маленькі рослини та ручна робота",
+  description: "Красивий каталог мініатюрних сукулентів та виробів ручної роботи. Обирайте та замовляйте на OLX.",
 };
 
 export default function RootLayout({

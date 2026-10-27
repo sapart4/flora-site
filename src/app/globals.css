@@ -1,29 +1,32 @@
-@import "tailwindcss";
+import type { Metadata } from "next";
+import { Albert_Sans, Playfair_Display } from "next/font/google";
+import "./globals.css";
 
-@theme {
-  --color-ink: #3A3A3A;
-  --color-pastel-pink: #FFB3BA;
-  --color-pastel-peach: #FFDFBA;
-  --color-pastel-lemon: #FFF5BA;
-  --color-pastel-mint: #BAFFC9;
-  --color-pastel-sky: #BAE1FF;
-  --color-pastel-lavender: #E8BEFA;
-  
-  --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
-}
+const albertSans = Albert_Sans({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-albert-sans",
+});
 
-@layer base {
-  body {
-    @apply text-ink bg-[#FFFDF9];
-  }
-}
+const playfair = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600", "700"],
+  variable: "--font-playfair",
+});
 
-/* Анимация вылета эмодзи */
-@keyframes float-up {
-  0% { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, -50%) translateY(-100px) scale(1.5); }
-}
+export const metadata: Metadata = {
+  title: "Flora | Маленькі рослини та ручна робота",
+  description: "Красивий каталог мініатюрних сукулентів та виробів ручної роботи. Обирайте та замовляйте на OLX.",
+};
 
-.animate-float-up {
-  animation: float-up 1.5s ease-out forwards;
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="ua">
+      <body className={`${albertSans.variable} ${playfair.variable} font-sans antialiased bg-[#FFFDF9] text-ink`}>
+        {children}
+      </body>
+    </html>
+  );
 }
