@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <main className="relative min-h-screen pb-20 overflow-hidden">
       
-      {/* Интерактивный фон с радугой */}
+      {/* Фон на самом дне (z-0) */}
       <RainbowBackground />
 
-      {/* Контент поверх фона */}
+      {/* Контент (z-10) */}
       <div className="relative z-10">
         <Header />
 

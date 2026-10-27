@@ -13,7 +13,6 @@ type Heart = {
 export default function RainbowBackground() {
   const [hearts, setHearts] = useState<Heart[]>([]);
 
-  // Прикольчик при клике
   const handleClick = (e: React.MouseEvent) => {
     const newHeart = {
       id: Date.now() + Math.random(),
@@ -31,11 +30,12 @@ export default function RainbowBackground() {
   };
 
   return (
+    // z-0, чтобы быть на фоне. w-full h-full для клика по всей области
     <div 
-      className="fixed inset-0 z-0 pointer-events-auto cursor-pointer overflow-hidden"
+      className="fixed inset-0 z-0 w-full h-full cursor-pointer overflow-hidden"
       onClick={handleClick}
     >
-      {/* Статичная радуга по бокам */}
+      {/* Радуга */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-pastel-pink/40 via-pastel-peach/30 to-transparent pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-pastel-sky/40 via-pastel-lavender/30 to-transparent pointer-events-none"></div>
 
