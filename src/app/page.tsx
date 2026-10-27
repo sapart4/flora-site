@@ -1,17 +1,16 @@
 import { plants } from "@/data/plants";
 import PlantCard from "@/components/PlantCard";
 import Header from "@/components/Header";
+import RainbowBackground from "@/components/RainbowBackground";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen pb-20 overflow-hidden">
       
-      {/* Декоративные пятна */}
-      <div className="absolute top-10 left-10 w-64 h-64 md:w-96 md:h-96 bg-pastel-pink rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob pointer-events-none z-0"></div>
-      <div className="absolute top-40 right-10 w-64 h-64 md:w-96 md:h-96 bg-pastel-sky rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 pointer-events-none z-0"></div>
-      <div className="absolute bottom-20 left-1/3 w-64 h-64 md:w-96 md:h-96 bg-pastel-lemon rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000 pointer-events-none z-0"></div>
+      {/* Интерактивный фон с радугой */}
+      <RainbowBackground />
 
-      {/* Контент поверх пятен */}
+      {/* Контент поверх фона */}
       <div className="relative z-10">
         <Header />
 
@@ -44,7 +43,6 @@ export default function Home() {
           <p className="text-gray-400 text-sm mb-2">
             © {new Date().getFullYear()} Flora. Зроблено з турботою 🌱
           </p>
-          {/* Твоя подпись */}
           <a 
             href="https://t.me/sapart4" 
             target="_blank" 
