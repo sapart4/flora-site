@@ -15,11 +15,11 @@ export const plants: Plant[] = [
     id: "plant-1",
     name: "Суккулент",
     price: 50,
-    image: "https://images.unsplash.com/photo-1509423350716-97f2360afcb5?q=80&w=600&auto=format&fit=crop",
+    image: "", 
     description: "Опис з'явиться скоро",
     care: "Догляд з'явиться скоро",
     bgColor: "bg-pastel-sky",
-    olxLink: "https://www.olx.ua/d/obyavlenie/sukulentnye-rasteniya-ID11y41Z.html",
+    olxLink: "https://www.olx.ua/d/obyavlenie/sukulentnye-rasteniya-ID11y41Z.html", 
   },
   {
     id: "plant-2",
